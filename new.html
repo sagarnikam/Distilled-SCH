@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+      <h3>Add new record to the database</h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "Make">Make</label><br>
+         <input type = "text" name = "Make" placeholder = "Make" /><br>
+         <label for = "Model">Model</label><br>
+         <input type = "text" name = "Model" placeholder = "Model" /><br>
+         <label for = "Year">Year</label><br>
+         <textarea name = "Year" placeholder = "Year"></textarea><br>
+         <label for = "Chassis_ID">Chassis_ID</label><br>
+         <textarea name = "Chassis_ID" placeholder = "Chassis_ID"></textarea><br>
+         <label for = "ID">ID</label><br>
+         <textarea name = "ID" placeholder = "ID"></textarea><br>
+         <label for = "Last_Update">Last_Update</label><br>
+         <textarea name = "Last_Update" placeholder = "Last_Update"></textarea><br>
+         <label for = "Price">Price</label><br>
+         <input type = "text" name = "Price" placeholder = "Price" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+
+   </body>
+</html>

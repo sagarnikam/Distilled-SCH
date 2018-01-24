@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+         <a href = "{{ url_for('show_all') }}">
+           <a href="/car" >View all Cars </a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;
+           <a href="/search" >Search a car by ID </a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;
+           <a href="/new" >Add new car record </a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;
+           <a href="/Average Price" >View the Average Price</a
+
+
+         </a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Cars</h3>
+
+      <table border="1">
+         <thead>
+            <tr>
+              <td> <h3> Make </h3></td>
+              <td> <h3> Model </h3></td>
+              <td> <h3> Year </h3></td>
+              <td> <h3> Chassis_ID </h3></td>
+              <td> <h3> ID </h3></td>
+              <td> <h3> Last_Update </h3></td>
+              <td> <h3> price </h3></td>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for car in Carzone %}
+               <tr>
+                 <td><h3>{{ car.make }}</h3></td>
+                 <td><h3>{{ car.model }}</h3></td>
+                 <td><h3>{{ car.year }}</h3></td>
+                 <td><h3>{{ car.Chassis_ID }}</h3></td>
+                 <td><h3>{{ car.ID }}</h3></td>
+                 <td><h3>{{ car.Last_Update }}</h3></td>
+                 <td><h3>{{ car.price }}</h3></td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>
